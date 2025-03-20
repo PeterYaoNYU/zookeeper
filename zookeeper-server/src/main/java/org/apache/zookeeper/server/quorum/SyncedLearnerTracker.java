@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.apache.zookeeper.server.quorum.flexible.QuorumVerifier;
 
+import jline.internal.Log;
+
 public class SyncedLearnerTracker {
 
     protected ArrayList<QuorumVerifierAcksetPair> qvAcksetPairs = new ArrayList<>();
@@ -56,6 +58,8 @@ public class SyncedLearnerTracker {
                 return false;
             }
         }
+
+        Log.info("All quorums present in synced leader tracker: " + ackSetsToString());
         return true;
     }
 
