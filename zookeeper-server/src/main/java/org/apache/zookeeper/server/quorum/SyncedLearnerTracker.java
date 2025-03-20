@@ -22,9 +22,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.apache.zookeeper.server.quorum.flexible.QuorumVerifier;
 
-import jline.internal.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SyncedLearnerTracker {
+
+    private static final Logger LOG = LoggerFactory.getLogger(SyncedLearnerTracker.class);
 
     protected ArrayList<QuorumVerifierAcksetPair> qvAcksetPairs = new ArrayList<>();
 
@@ -59,7 +62,7 @@ public class SyncedLearnerTracker {
             }
         }
 
-        Log.info("All quorums present in synced leader tracker: " + ackSetsToString());
+        LOG.info("All quorums present in synced leader tracker: " + ackSetsToString());
         return true;
     }
 

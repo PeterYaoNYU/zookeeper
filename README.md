@@ -6,6 +6,11 @@
   </a>
 </p>
 
+Compilation with maven:
+```bash
+mvn clean install -Dmaven.test.skip=true
+```
+
 For the latest information about Apache ZooKeeper, please visit our website at:
 
    https://zookeeper.apache.org
